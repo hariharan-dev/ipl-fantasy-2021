@@ -72,6 +72,7 @@ const Players = [
 ];
 const pointsTable = {
   "Adangatha Boys": {
+    name: "Adangatha Boys",
     1: 0,
     2: 0,
     3: 0,
@@ -79,6 +80,7 @@ const pointsTable = {
     total: 0,
   },
   "Adangatha Yellow Team": {
+    name: "Adangatha Yellow Team",
     1: 0,
     2: 0,
     3: 0,
@@ -86,6 +88,7 @@ const pointsTable = {
     total: 0,
   },
   "Kodambakkam Sharks": {
+    name: "Kodambakkam Sharks",
     1: 0,
     2: 0,
     3: 0,
@@ -93,6 +96,7 @@ const pointsTable = {
     total: 0,
   },
   "Rocket1 Heroes": {
+    name: "Rocket1 Heroes",
     1: 0,
     2: 0,
     3: 0,
@@ -114,24 +118,28 @@ Object.keys(pointsTable).forEach((player) => {
       (5 - position) * pointsTable[player][position];
   });
 });
-console.table(pointsTable);
-
+const displayTable = [];
 Object.keys(pointsTable).forEach((player) => {
+  displayTable.push(pointsTable[player]);
+});
+displayTable.sort((playerA, playerB) => playerA.total > playerB.total ? -1 : 1);
+
+displayTable.forEach((player) => {
   const pTableRow = pointsTableTemp.content.cloneNode(true);
   let playerTD = pTableRow.querySelector("#player");
-  playerTD.innerHTML = player;
+  playerTD.innerHTML = player.name;
 
   let pos1TD = pTableRow.querySelector("#pos1");
-  pos1TD.innerHTML = pointsTable[player][1];
+  pos1TD.innerHTML = player[1];
   let pos2TD = pTableRow.querySelector("#pos2");
-  pos2TD.innerHTML = pointsTable[player][2];
+  pos2TD.innerHTML = player[2];
   let pos3TD = pTableRow.querySelector("#pos3");
-  pos3TD.innerHTML = pointsTable[player][3];
+  pos3TD.innerHTML = player[3];
   let pos4TD = pTableRow.querySelector("#pos4");
-  pos4TD.innerHTML = pointsTable[player][4];
+  pos4TD.innerHTML = player[4];
 
   let playerTotal = pTableRow.querySelector("#total");
-  playerTotal.innerHTML = pointsTable[player]["total"];
+  playerTotal.innerHTML = player["total"];
 
   document.getElementById("points-table").appendChild(pTableRow);
 });
