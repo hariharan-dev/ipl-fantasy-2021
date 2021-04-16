@@ -55,6 +55,14 @@ const GAMES = [
     "Kodambakkam Sharks": 2,
     "Rocket1 Heroes": 4,
   },
+    {
+    id: 8,
+    title: "PBKS VS CSK",
+    "Adangatha Boys": 4,
+    "Adangatha Yellow Team": 3,
+    "Kodambakkam Sharks": 1,
+    "Rocket1 Heroes": 2,
+  },
 ];
 const Players = [
   "Adangatha Boys",
