@@ -6,6 +6,12 @@ const GAMES = [
     "Adangatha Yellow Team": 0,
     "Kodambakkam Sharks": 0,
     "Rocket1 Heroes": 0,
+    scores: {
+      "Adangatha Boys": 0,
+      "Adangatha Yellow Team": 0,
+      "Kodambakkam Sharks": 0,
+      "Rocket1 Heroes": 0,
+    },
   },
   {
     id: 2,
@@ -14,6 +20,12 @@ const GAMES = [
     "Adangatha Yellow Team": 4,
     "Kodambakkam Sharks": 2,
     "Rocket1 Heroes": 3,
+    scores: {
+      "Adangatha Boys": 739.5,
+      "Kodambakkam Sharks": 696.5,
+      "Rocket1 Heroes": 603.5,
+      "Adangatha Yellow Team": 476.5,
+    },
   },
   {
     id: 3,
@@ -22,6 +34,12 @@ const GAMES = [
     "Adangatha Yellow Team": 4,
     "Kodambakkam Sharks": 3,
     "Rocket1 Heroes": 1,
+    scores: {
+      "Rocket1 Heroes": 582.5,
+      "Adangatha Boys": 539,
+      "Kodambakkam Sharks": 536.5,
+      "Adangatha Yellow Team": 522.5,
+    },
   },
   {
     id: 4,
@@ -30,6 +48,12 @@ const GAMES = [
     "Adangatha Yellow Team": 1,
     "Kodambakkam Sharks": 2,
     "Rocket1 Heroes": 3,
+    scores: {
+      "Adangatha Yellow Team": 790,
+      "Kodambakkam Sharks": 777.5,
+      "Rocket1 Heroes": 580,
+      "Adangatha Boys": 556,
+    },
   },
   {
     id: 5,
@@ -38,6 +62,12 @@ const GAMES = [
     "Adangatha Yellow Team": 2,
     "Kodambakkam Sharks": 4,
     "Rocket1 Heroes": 3,
+    scores: {
+      "Adangatha Boys": 777.5,
+      "Adangatha Yellow Team": 722.5,
+      "Rocket1 Heroes": 687,
+      "Kodambakkam Sharks": 613.5,
+    },
   },
   {
     id: 6,
@@ -46,6 +76,12 @@ const GAMES = [
     "Adangatha Yellow Team": 3,
     "Kodambakkam Sharks": 2,
     "Rocket1 Heroes": 1,
+    scores: {
+      "Rocket1 Heroes": 770.5,
+      "Kodambakkam Sharks": 650.5,
+      "Adangatha Yellow Team": 571,
+      "Adangatha Boys": 544,
+    },
   },
   {
     id: 7,
@@ -54,14 +90,26 @@ const GAMES = [
     "Adangatha Yellow Team": 3,
     "Kodambakkam Sharks": 2,
     "Rocket1 Heroes": 4,
+    scores: {
+      "Adangatha Boys": 617.5,
+      "Kodambakkam Sharks": 613.5,
+      "Adangatha Yellow Team": 453,
+      "Rocket1 Heroes": 429,
+    },
   },
-    {
+  {
     id: 8,
     title: "PBKS VS CSK",
     "Adangatha Boys": 4,
     "Adangatha Yellow Team": 3,
     "Kodambakkam Sharks": 1,
     "Rocket1 Heroes": 2,
+    scores: {
+      "Kodambakkam Sharks": 525,
+      "Rocket1 Heroes": 428,
+      "Adangatha Yellow Team": 424.5,
+      "Adangatha Boys": 397.5,
+    },
   },
 ];
 const Players = [
@@ -122,7 +170,9 @@ const displayTable = [];
 Object.keys(pointsTable).forEach((player) => {
   displayTable.push(pointsTable[player]);
 });
-displayTable.sort((playerA, playerB) => playerA.total > playerB.total ? -1 : 1);
+displayTable.sort((playerA, playerB) =>
+  playerA.total > playerB.total ? -1 : 1
+);
 
 displayTable.forEach((player) => {
   const pTableRow = pointsTableTemp.content.cloneNode(true);
@@ -143,3 +193,35 @@ displayTable.forEach((player) => {
 
   document.getElementById("points-table").appendChild(pTableRow);
 });
+
+GAMES.forEach((game) => {
+  const matchTemplate = match.content.cloneNode(true);
+  let matcNo = matchTemplate.querySelector("#match-no");
+  matcNo.innerHTML = `Match ${game.id}`;
+
+  Object.keys(game.scores).forEach((player, index) => {
+    let playerScore = matchTemplate.querySelector("#p" + (index + 1));
+    playerScore.innerHTML = `${player} - ${game.scores[player]}`;
+  });
+
+  document.getElementById("match-history").appendChild(matchTemplate);
+});
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}

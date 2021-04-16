@@ -1,12 +1,10 @@
 <html>
   <head>
     <title>IPL 2021 Fantasy</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>
-      IPL Fantasy 2021 Points Table
-    </h1>
+    <h1>IPL Fantasy 2021 Points Table</h1>
     <table id="points-table">
       <tr>
         <th>Players</th>
@@ -18,19 +16,27 @@
       </tr>
       <template id="pointsTableTemp">
         <tr>
-          <td >
-              <a href="" id="player">
-
-              </a>
-          </td>
-          <th id="pos1"></th>
-          <th id="pos2"></th>
-          <th id="pos3"></th>
-          <th id="pos4"></th>
+          <th id="player"></th>
+          <td id="pos1"></td>
+          <td id="pos2"></td>
+          <td id="pos3"></td>
+          <td id="pos4"></td>
           <th id="total"></th>
         </tr>
       </template>
     </table>
+    <h1>Match Results</h1>
+    <div id="match-history">
+      <template id="match">
+        <button id="match-no" class="accordion"></button>
+        <div class="panel">
+          <p id="p1"></p>
+          <p id="p2"></p>
+          <p id="p3"></p>
+          <p id="p4"></p>
+        </div>
+      </template>
+    </div>
     <script text="javascript" src="./index.js"></script>
   </body>
 </html>
