@@ -144,8 +144,8 @@ function games() {
       id: 11,
       title: "DC VS PBKS",
       "Adangatha Boys": 2,
-      "Adangatha Yellow Team": 3
-      "Kodambakkam Sharks": 3,
+      "Adangatha Yellow Team": 3,
+      "Kodambakkam Sharks": 4,
       "Rocket1 Heroes": 1,
       scores: {
         "Rocket1 Heroes": 671.5,
