@@ -111,6 +111,20 @@ const GAMES = [
       "Adangatha Boys": 397.5,
     },
   },
+    {
+    id: 9,
+    title: "MI VS SRH",
+    "Adangatha Boys": 2,
+    "Adangatha Yellow Team": 3,
+    "Kodambakkam Sharks": 4,
+    "Rocket1 Heroes": 1,
+    scores: {
+      "Rocket1 Heroes": 597,
+      "Adangatha Boys": 537,
+      "Adangatha Yellow Team": 505,
+      "Kodambakkam Sharks": 486,
+    },
+  },
 ];
 const Players = [
   "Adangatha Boys",
