@@ -111,7 +111,7 @@ const GAMES = [
       "Adangatha Boys": 397.5,
     },
   },
-    {
+  {
     id: 9,
     title: "MI VS SRH",
     "Adangatha Boys": 2,
@@ -139,7 +139,8 @@ const pointsTable = {
     2: 0,
     3: 0,
     4: 0,
-    total: 0,
+    totalPts: 0,
+    totalScore: 0,
   },
   "Adangatha Yellow Team": {
     name: "Adangatha Yellow Team",
@@ -147,7 +148,8 @@ const pointsTable = {
     2: 0,
     3: 0,
     4: 0,
-    total: 0,
+    totalPts: 0,
+    totalScore: 0,
   },
   "Kodambakkam Sharks": {
     name: "Kodambakkam Sharks",
@@ -155,7 +157,8 @@ const pointsTable = {
     2: 0,
     3: 0,
     4: 0,
-    total: 0,
+    totalPts: 0,
+    totalScore: 0,
   },
   "Rocket1 Heroes": {
     name: "Rocket1 Heroes",
@@ -163,79 +166,113 @@ const pointsTable = {
     2: 0,
     3: 0,
     4: 0,
-    total: 0,
+    totalPts: 0,
+    totalScore: 0,
   },
 };
-
-GAMES.forEach((game) => {
-  Players.forEach((player) => {
-    if (game[player]) {
-      pointsTable[player][game[player]]++;
-    }
-  });
-});
-Object.keys(pointsTable).forEach((player) => {
-  [1, 2, 3, 4].forEach((position) => {
-    pointsTable[player]["total"] +=
-      (5 - position) * pointsTable[player][position];
-  });
-});
 const displayTable = [];
-Object.keys(pointsTable).forEach((player) => {
-  displayTable.push(pointsTable[player]);
-});
-displayTable.sort((playerA, playerB) =>
-  playerA.total > playerB.total ? -1 : 1
-);
 
-displayTable.forEach((player) => {
-  const pTableRow = pointsTableTemp.content.cloneNode(true);
-  let playerTD = pTableRow.querySelector("#player");
-  playerTD.innerHTML = player.name;
+calcualePlayerPositions();
+calcualeTotalPts();
+preparePointsTable();
+addHTMLElements();
+enableAccordion();
 
-  let pos1TD = pTableRow.querySelector("#pos1");
-  pos1TD.innerHTML = player[1];
-  let pos2TD = pTableRow.querySelector("#pos2");
-  pos2TD.innerHTML = player[2];
-  let pos3TD = pTableRow.querySelector("#pos3");
-  pos3TD.innerHTML = player[3];
-  let pos4TD = pTableRow.querySelector("#pos4");
-  pos4TD.innerHTML = player[4];
+/**
+ * Calculates player position counts & total score
+ */
+function calcualePlayerPositions() {
+  GAMES.forEach((game) => {
+    Players.forEach((player) => {
+      if (game[player]) {
+        pointsTable[player][game[player]]++;
+        pointsTable[player].totalScore += game.scores[player];
+      }
+    });
+  });
+}
 
-  let playerTotal = pTableRow.querySelector("#total");
-  playerTotal.innerHTML = player["total"];
+/**
+ * Calculates total points based on player positions finished
+ */
+function calcualeTotalPts() {
+  Object.keys(pointsTable).forEach((player) => {
+    [1, 2, 3, 4].forEach((position) => {
+      pointsTable[player]["totalPts"] +=
+        (5 - position) * pointsTable[player][position];
+    });
+  });
+}
 
-  document.getElementById("points-table").appendChild(pTableRow);
-});
+/**
+ * Forms points table data
+ */
+function preparePointsTable() {
+  Object.keys(pointsTable).forEach((player) => {
+    displayTable.push(pointsTable[player]);
+  });
+  displayTable.sort((playerA, playerB) =>
+    playerA.totalPts > playerB.totalPts ? -1 : 1
+  );
+}
 
-GAMES.forEach((game) => {
-  const matchTemplate = match.content.cloneNode(true);
-  let matcNo = matchTemplate.querySelector("#match-no");
-  matcNo.innerHTML = `Match ${game.id}`;
+function addHTMLElements() {
+  displayTable.forEach((player) => {
+    const pTableRow = pointsTableTemp.content.cloneNode(true);
+    let playerTD = pTableRow.querySelector("#player");
+    playerTD.innerHTML = player.name;
 
-  Object.keys(game.scores).forEach((player, index) => {
-    let playerScore = matchTemplate.querySelector("#p" + (index + 1));
-    playerScore.innerHTML = `${player} - ${game.scores[player]}`;
+    let pos1TD = pTableRow.querySelector("#pos1");
+    pos1TD.innerHTML = player[1];
+    let pos2TD = pTableRow.querySelector("#pos2");
+    pos2TD.innerHTML = player[2];
+    let pos3TD = pTableRow.querySelector("#pos3");
+    pos3TD.innerHTML = player[3];
+    let pos4TD = pTableRow.querySelector("#pos4");
+    pos4TD.innerHTML = player[4];
+
+    let points = pTableRow.querySelector("#points");
+    points.innerHTML = player["totalPts"];
+
+    let score = pTableRow.querySelector("#score");
+    score.innerHTML = player["totalScore"];
+
+    document.getElementById("points-table").appendChild(pTableRow);
   });
 
-  document.getElementById("match-history").appendChild(matchTemplate);
-});
+  GAMES.forEach((game) => {
+    const matchTemplate = match.content.cloneNode(true);
+    let matcNo = matchTemplate.querySelector("#match-no");
+    matcNo.innerHTML = `Match ${game.id}`;
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+    Object.keys(game.scores).forEach((player, index) => {
+      let playerScore = matchTemplate.querySelector("#p" + (index + 1));
+      playerScore.innerHTML = `${index + 1}. ${player} - ${
+        game.scores[player]
+      }`;
+    });
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    /* Toggle between adding and removing the "active" class,
+    document.getElementById("match-history").appendChild(matchTemplate);
+  });
+}
+
+function enableAccordion() {
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      /* Toggle between adding and removing the "active" class,
     to highlight the button that controls the panel */
-    this.classList.toggle("active");
+      this.classList.toggle("active");
 
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
 }
