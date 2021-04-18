@@ -125,6 +125,20 @@ const GAMES = [
       "Kodambakkam Sharks": 486,
     },
   },
+  {
+    id: 10,
+    title: "RCB VS KKR",
+    "Adangatha Boys": 1,
+    "Adangatha Yellow Team": 4,
+    "Kodambakkam Sharks": 3,
+    "Rocket1 Heroes": 2,
+    scores: {
+      "Adangatha Boys": 790,
+      "Rocket1 Heroes":  710.5,
+      "Kodambakkam Sharks": 640,
+      "Adangatha Yellow Team": 606.5,
+    },
+  },
 ];
 const Players = [
   "Adangatha Boys",
