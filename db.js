@@ -140,7 +140,7 @@ function games() {
         "Adangatha Yellow Team": 606.5,
       },
     },
-{
+    {
       id: 11,
       title: "DC VS PBKS",
       "Adangatha Boys": 2,
