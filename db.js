@@ -154,5 +154,19 @@ function games() {
         "Kodambakkam Sharks": 570,
       },
     },
+    {
+      id: 12,
+      title: "CSK VS RR",
+      "Adangatha Boys": 1,
+      "Adangatha Yellow Team": 2,
+      "Kodambakkam Sharks": 4,
+      "Rocket1 Heroes": 3,
+      scores: {
+        "Adangatha Boys": 746,
+        "Adangatha Yellow Team": 737,
+        "Rocket1 Heroes": 658,
+        "Kodambakkam Sharks": 617,
+      },
+    },
   ];
 }
