@@ -168,5 +168,19 @@ function games() {
         "Kodambakkam Sharks": 617,
       },
     },
+    {
+      id: 13,
+      title: "DC VS MI",
+      "Adangatha Boys": 1,
+      "Adangatha Yellow Team": 3,
+      "Kodambakkam Sharks": 4,
+      "Rocket1 Heroes": 2,
+      scores: {
+        "Adangatha Boys": 504.5,
+        "Rocket1 Heroes": 491,
+        "Adangatha Yellow Team": 487,
+        "Kodambakkam Sharks": 474,
+      },
+    },
   ];
 }
