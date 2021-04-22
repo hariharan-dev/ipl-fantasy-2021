@@ -116,8 +116,8 @@ function addHTMLElements() {
   GAMES.forEach((game) => {
     const matchTemplate = match.content.cloneNode(true);
     let matcNo = matchTemplate.querySelector("#match-no");
-    matcNo.innerHTML = `Match ${game.id}`;
-
+    matcNo.innerHTML = `MATCH ${game.id}<br>(${game.title})`;
+    
     Object.keys(game.scores).forEach((player, index) => {
       let playerScore = matchTemplate.querySelector("#p" + (index + 1));
       playerScore.innerHTML = `${index + 1}. ${player} - ${
