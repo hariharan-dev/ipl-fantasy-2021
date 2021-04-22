@@ -182,5 +182,33 @@ function games() {
         "Kodambakkam Sharks": 474,
       },
     },
+    {
+      id: 14,
+      title: "PKBS VS SRH",
+      "Rocket1 Heroes": 1,
+      "Adangatha Boys": 2,
+      "Adangatha Yellow Team": 3,
+      "Kodambakkam Sharks": 4,
+      scores: {
+        "Rocket1 Heroes": 461.5,
+        "Adangatha Boys": 447,
+        "Adangatha Yellow Team": 348,
+        "Kodambakkam Sharks": 328,
+      },
+    },
+    {
+      id: 15,
+      title: "KKR VS CSK",
+      "Rocket1 Heroes": 1,
+      "Adangatha Yellow Team": 2,
+      "Adangatha Boys": 3,
+      "Kodambakkam Sharks": 4,
+      scores: {
+        "Rocket1 Heroes": 778,
+        "Adangatha Yellow Team": 723.5,
+        "Adangatha Boys": 683,
+        "Kodambakkam Sharks": 575.5,
+      },
+    },
   ];
 }
