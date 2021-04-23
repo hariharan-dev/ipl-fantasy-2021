@@ -210,5 +210,19 @@ function games() {
         "Kodambakkam Sharks": 575.5,
       },
     },
+    {
+      id: 16,
+      title: "RCB VS RR",
+      "Kodambakkam Sharks": 1,
+      "Rocket1 Heroes": 2,
+      "Adangatha Boys": 3,
+      "Adangatha Yellow Team": 4,
+      scores: {
+        "Kodambakkam Sharks": 673.5,
+        "Rocket1 Heroes": 432,
+        "Adangatha Boys": 419,
+        "Adangatha Yellow Team": 375.5,
+      },
+    },
   ];
 }
