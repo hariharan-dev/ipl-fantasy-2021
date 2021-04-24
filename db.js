@@ -224,5 +224,19 @@ function games() {
         "Adangatha Yellow Team": 375.5,
       },
     },
+    {
+      id: 17,
+      title: "PBKS VS MI",
+      "Adangatha Yellow Team": 1,
+      "Adangatha Boys": 2,
+      "Kodambakkam Sharks": 3,
+      "Rocket1 Heroes": 4,
+      scores: {
+        "Adangatha Yellow Team": 560.5,
+        "Adangatha Boys": 515,
+        "Kodambakkam Sharks": 436.5,
+        "Rocket1 Heroes": 390.5,
+      },
+    },
   ];
 }
