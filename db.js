@@ -238,5 +238,19 @@ function games() {
         "Rocket1 Heroes": 390.5,
       },
     },
+    {
+      id: 18,
+      title: "RR VS KKR",
+      "Adangatha Yellow Team": 1,
+      "Adangatha Boys": 2,
+      "Kodambakkam Sharks": 3,
+      "Rocket1 Heroes": 4,
+      scores: {
+        "Adangatha Boys": 515.5,
+        "Rocket1 Heroes": 504,
+        "Kodambakkam Sharks": 476.5,
+        "Adangatha Yellow Team": 474,
+      },
+    },
   ];
 }
