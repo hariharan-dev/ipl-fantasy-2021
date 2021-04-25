@@ -266,5 +266,19 @@ function games() {
         "Rocket1 Heroes": 393.5,
       },
     },
+    {
+      id: 20,
+      title: "SRH VS DC",
+      "Adangatha Boys": 1,
+      "Kodambakkam Sharks": 2,
+      "Rocket1 Heroes": 3,
+      "Adangatha Yellow Team": 4,
+      scores: {
+        "Adangatha Boys": 611.5,
+        "Kodambakkam Sharks": 568.5,
+        "Rocket1 Heroes": 540.5,
+        "Adangatha Yellow Team": 496.5,
+      },
+    },
   ];
 }
