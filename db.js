@@ -252,5 +252,19 @@ function games() {
         "Adangatha Yellow Team": 474,
       },
     },
+    {
+      id: 19,
+      title: "CSK VS RCB",
+      "Adangatha Boys": 1,
+      "Kodambakkam Sharks": 2,
+      "Adangatha Yellow Team": 3,
+      "Rocket1 Heroes": 4,
+      scores: {
+        "Adangatha Boys": 721,
+        "Kodambakkam Sharks": 695,
+        "Adangatha Yellow Team": 488.5,
+        "Rocket1 Heroes": 393.5,
+      },
+    },
   ];
 }
