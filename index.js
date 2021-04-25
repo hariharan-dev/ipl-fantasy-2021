@@ -84,8 +84,12 @@ function preparePointsTable() {
   Object.keys(pointsTable).forEach((player) => {
     displayTable.push(pointsTable[player]);
   });
-  displayTable.sort((playerA, playerB) =>
-    playerA.totalPts > playerB.totalPts ? -1 : 1
+  displayTable.sort((playerA, playerB) => {
+    if(playerA.totalPts === playerB.totalPts) {
+      return playerA.totalScore > playerB.totalScore ? -1 : 1;
+    }
+    return playerA.totalPts > playerB.totalPts ? -1 : 1;
+  }
   );
 }
 
