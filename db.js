@@ -280,5 +280,19 @@ function games() {
         "Adangatha Yellow Team": 496.5,
       },
     },
+    {
+      id: 21,
+      title: "PBKS VS KKR",
+      "Adangatha Boys": 1,
+      "Adangatha Yellow Team": 2,
+      "Kodambakkam Sharks": 3,
+      "Rocket1 Heroes": 4,
+      scores: {
+        "Adangatha Boys": 392.5,
+        "Adangatha Yellow Team": 382,
+        "Kodambakkam Sharks": 369.5,
+        "Rocket1 Heroes": 322,
+      },
+    },
   ];
 }
