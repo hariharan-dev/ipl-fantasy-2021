@@ -294,5 +294,33 @@ function games() {
         "Rocket1 Heroes": 322,
       },
     },
+    {
+      id: 22,
+      title: "DC VS RCB",
+      "Rocket1 Heroes": 1,
+      "Adangatha Boys": 2,
+      "Kodambakkam Sharks": 3,
+      "Adangatha Yellow Team": 4,
+      scores: {
+        "Rocket1 Heroes": 602.5,
+        "Adangatha Boys": 512,
+        "Kodambakkam Sharks": 449.5,
+        "Adangatha Yellow Team": 0,
+      },
+    },
+    {
+      id: 23,
+      title: "CSK VS SRH",
+      "Adangatha Yellow Team": 1,
+      "Rocket1 Heroes": 2,
+      "Adangatha Boys": 3,
+      "Kodambakkam Sharks": 4,
+      scores: {
+        "Adangatha Yellow Team": 560,
+        "Rocket1 Heroes": 543,
+        "Adangatha Boys": 530,
+        "Kodambakkam Sharks": 495,
+      },
+    },
   ];
 }
