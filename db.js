@@ -339,10 +339,10 @@ function games() {
     {
       id: 25,
       title: "DC VS KKR",
-      "Adangatha Boys": 1,
-      "Rocket1 Heroes": 2,
+      "Rocket1 Heroes": 1,
+      "Adangatha Yellow Team": 2,
       "Kodambakkam Sharks": 3,
-      "Adangatha Yellow Team": 4,
+      "Adangatha Boys": 4,
       scores: {
         "Rocket1 Heroes": 679.5,
         "Adangatha Yellow Team": 563,
