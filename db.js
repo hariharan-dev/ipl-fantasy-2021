@@ -351,20 +351,6 @@ function games() {
       },
     },
     {
-      id: 25,
-      title: "DC VS KKR",
-      "Rocket1 Heroes": 1,
-      "Adangatha Yellow Team": 2,
-      "Kodambakkam Sharks": 3,
-      "Adangatha Boys": 4,
-      scores: {
-        "Rocket1 Heroes": 679.5,
-        "Adangatha Yellow Team": 563,
-        "Kodambakkam Sharks": 534.5,
-        "Adangatha Boys": 471,
-      },
-    },
-    {
       id: 26,
       title: "PBKS VS RCB",
       "Adangatha Boys": 1,
